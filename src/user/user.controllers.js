@@ -41,7 +41,9 @@ module.exports = {
                     return res.status(200).json({
                         success: 1,
                         message: "login Successfull",
-                        token: token
+                        token: token,
+                        user_id:result.AdminID,
+                        name : result.LoginName
                     })
                 }
                 else {
