@@ -80,7 +80,7 @@ module.exports = {
   getAllworkOrderTransaction: async (callback) => {
     try {
       const request = model.db.request();
-      let query = `select * from WorkOrderTransaction`;
+      let query = `select max(workOrderId) as workID from WorkOrderTransaction`;
       const response = await request.query(query);
       return callback(null, response.recordset);
     }
